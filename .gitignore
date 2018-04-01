@@ -1,0 +1,8 @@
+# Webstorm IDE files
+.idea/
+
+# Dependencies
+node_modules/
+
+# Build output
+build/
