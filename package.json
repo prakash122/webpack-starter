@@ -4,12 +4,15 @@
   "description": "Webpack configuration for the front end projects",
   "main": "app/index.js",
   "scripts": {
-    "build": "webpack"
+    "build": "webpack --mode=production --config=webpack.production.config.js",
+    "dev-build": "webpack --mode=development --config=webpack.development.config.js",
+    "start": "webpack-dev-server --mode=development --config=webpack.development.config.js"
   },
   "author": "Prakash Kumar <mail@prakash.io>",
   "license": "MIT",
   "devDependencies": {
     "webpack": "^4.4.1",
-    "webpack-cli": "^2.0.13"
+    "webpack-cli": "^2.0.13",
+    "webpack-dev-server": "^3.1.1"
   }
 }

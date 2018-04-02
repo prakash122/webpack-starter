@@ -1,5 +1,5 @@
 "use strict";
-
+console.log('Develpoment mode');
 const path = require('path');
 
 // Paths involved in the creating the config
