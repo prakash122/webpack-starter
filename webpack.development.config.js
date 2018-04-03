@@ -1,11 +1,11 @@
 "use strict";
-console.log('Develpoment mode');
+
 const path = require('path');
 
 // Paths involved in the creating the config
 const PATHS = {
     src: path.resolve(__dirname, 'app/index.js'),
-    dest: path.resolve(__dirname, 'build')
+    dest: path.resolve(__dirname, 'dist')
 }
 
 // Webpack config object
@@ -19,5 +19,11 @@ config.output = {
     path: PATHS.dest,
     filename: 'output.bundle.js'
 }
+
+config.devServer = { 
+    contentBase: PATHS.dest,
+    inline: true,
+    port: 9500
+};
 
 module.exports = config;
