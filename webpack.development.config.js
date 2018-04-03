@@ -20,10 +20,27 @@ config.output = {
     filename: 'output.bundle.js'
 }
 
-config.devServer = { 
+// Webpack Dev Server
+config.devServer = {
     contentBase: PATHS.dest,
     inline: true,
     port: 9500
+};
+
+config.module = {
+    rules: [
+        {
+            test: /\.css$/,
+            use: [
+                { loader: 'style-loader' },
+                {
+                    loader: 'css-loader',
+                    options: {
+                        modules: true
+                    }
+                }]
+        }
+    ]
 };
 
 module.exports = config;
