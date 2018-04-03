@@ -30,6 +30,17 @@ config.devServer = {
 config.module = {
     rules: [
         {
+            test: /\.js$/,
+            use: [
+                {
+                    loader: 'babel-loader',
+                    options: {
+                        presets: ['env']
+                    }
+                }
+            ]
+        },
+        {
             test: /\.css$/,
             use: [
                 { loader: 'style-loader' },
