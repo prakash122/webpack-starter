@@ -1,6 +1,9 @@
 "use strict";
 
 const path = require('path');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 // Paths involved in the creating the config
 const PATHS = {
@@ -43,15 +46,15 @@ config.module = {
         {
             test: /\.css$/,
             use: [
-                { loader: 'style-loader' },
-                {
-                    loader: 'css-loader',
-                    options: {
-                        modules: true
-                    }
-                }]
+                MiniCssExtractPlugin.loader,
+                "css-loader"
+            ]
         }
     ]
 };
+
+config.plugins = [    
+    new MiniCssExtractPlugin()
+];
 
 module.exports = config;

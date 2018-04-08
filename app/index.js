@@ -5,5 +5,5 @@ console.log('I am the best front end applications.');
 
 setTimeout(() => {
     let a = 10;
-    console.log('Timedout the index.js ' + a)
+    console.log('Timed out the index.js ' + a)
 }, 200);
