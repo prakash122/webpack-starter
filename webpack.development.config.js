@@ -4,6 +4,7 @@ const path = require('path');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 // Paths involved in the creating the config
 const PATHS = {
@@ -53,8 +54,12 @@ config.module = {
     ]
 };
 
-config.plugins = [    
-    new MiniCssExtractPlugin()
+config.plugins = [
+    new MiniCssExtractPlugin(),
+    new HtmlWebpackPlugin({
+        template: 'app/index.ejs',
+        title: 'Webpack Starter'
+    })
 ];
 
 module.exports = config;
